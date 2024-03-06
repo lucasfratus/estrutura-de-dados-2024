@@ -21,13 +21,21 @@ def insere_elementos(lista: list[Pilha], n):
                 Pilha.empilha(lista[x],x+1)
                 contador += -1
 
-def aleatoriza_pilha(lista: list[Pilha]):
-    num_pilhas_validas = len(lista)
-    for i in range(4):
-        for j in range(num_pilhas_validas - 2):
-            destino = random.randint(0, num_pilhas_validas - 3)
-            # Troca os elementos entre as pilhas
-            lista[j][i], lista[destino][i] = lista[destino][i], lista[j][i]
+def aleatoriza_elementos(n: int):
+    aleatorizada = [0] * (n * 4)
+    i = len(aleatorizada) - 1
+    j = n
+    while i >= 0:
+        contador = 4
+        while contador > 0:
+            aleatorizada[i] = j
+            i += -1
+            contador += -1
+        j += -1    
+    random.shuffle(aleatorizada)
+    print(aleatorizada)
+
+aleatoriza_elementos(n)
 
 def imprimir_pilhas(lista: list[Pilha]):
     for x in lista:
@@ -35,7 +43,7 @@ def imprimir_pilhas(lista: list[Pilha]):
 
 i = criar_pilhas(n)
 x = insere_elementos(i,n)
-z = aleatoriza_pilha(i)
+#z = aleatoriza_pilha(i)
 imprimir_pilhas(i)
 
 
