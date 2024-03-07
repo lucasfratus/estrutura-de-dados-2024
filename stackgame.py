@@ -58,8 +58,7 @@ def verifica_iguais(lista: list[Pilha], n):
                 igualdade = False
             y += 1
         x += 1
-    print(igualdade)
-verifica_iguais([[2,2,2,2],[1,1,1,1],[3,3,3,3],[0,0,0,0],[0,0,0,0]],n)
+    return igualdade ######
 
 
 y = criar_pilhas(n)
