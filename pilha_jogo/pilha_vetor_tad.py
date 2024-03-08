@@ -30,6 +30,3 @@ class Pilha:
             self.elem[self.topo] = 0
             self.topo += -1
             return desempilhado
-
-    #def __str__(self) -> str:
-        return str(self.elem)

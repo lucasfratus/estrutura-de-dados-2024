@@ -81,7 +81,8 @@ def jogo_pilha(n):
         desempilhar_pilha = int(input('De qual pilha você deseja desempilhar os elementos? '))
         empilhar_pilha = int(input('Em qual pilha você deseja empilhar o elemento desempilhado? '))
         jogada(z, desempilhar_pilha, empilhar_pilha)
-    print('Parabéns, você ganhou o jogo!')
+    print(colored('Parabéns, você ganhou o jogo!', 'green'))
+    imprimir_pilhas(z)
 
 print('Bem vindo(a) ao jogo! \nNesse jogo, você escolhe uma quantidade de números(entre 1 e 7) que vão ser distribuidos entre a mesma quantidade de pilhas \
 que o número escolhido.\nSeu objetivo é fazer com que as pilhas fiquem, cada uma, com os 4 elementos iguais.')
