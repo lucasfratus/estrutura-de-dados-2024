@@ -64,8 +64,11 @@ def inicia_jogo(n: int):
 def jogada(lista: list[Pilha], pilha_origem: int, pilha_destino: int):
     if not lista[pilha_origem].vazio():
         if not lista[pilha_destino].cheia():
-            desempilhado = lista[pilha_origem].desempilha()
-            empilhado = lista[pilha_destino].empilha(desempilhado)
+            if lista[pilha_destino].topo == lista[pilha_origem].topo or lista[pilha_destino].vazio():
+                desempilhado = lista[pilha_origem].desempilha()
+                empilhado = lista[pilha_destino].empilha(desempilhado)
+            else:
+                print('Erro! O elemento desempilhado não é igual o elemento do topo da pilha de destino')
         else:
             print('Erro! Pilha de destino está cheia! Tente novamente...') 
     else:
@@ -81,7 +84,7 @@ def jogo_pilha(n):
         desempilhar_pilha = int(input('De qual pilha você deseja desempilhar os elementos? '))
         empilhar_pilha = int(input('Em qual pilha você deseja empilhar o elemento desempilhado? '))
         jogada(z, desempilhar_pilha, empilhar_pilha)
-    print(colored('Parabéns, você ganhou o jogo!', 'green'))
+    print('Parabéns, você ganhou o jogo!')
     imprimir_pilhas(z)
 
 print('Bem vindo(a) ao jogo! \nNesse jogo, você escolhe uma quantidade de números(entre 1 e 7) que vão ser distribuidos entre a mesma quantidade de pilhas \
