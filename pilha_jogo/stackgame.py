@@ -68,7 +68,7 @@ def jogada(lista: list[Pilha], pilha_origem: int, pilha_destino: int):
                 desempilhado = lista[pilha_origem].desempilha()
                 empilhado = lista[pilha_destino].empilha(desempilhado)
             else:
-                print('Erro! O elemento desempilhado não é igual o elemento do topo da pilha de destino')
+                print('Erro! O elemento desempilhado não é igual o elemento do topo da pilha de destino! Tente novamente...')
         else:
             print('Erro! Pilha de destino está cheia! Tente novamente...') 
     else:
@@ -87,8 +87,10 @@ def jogo_pilha(n):
     print('Parabéns, você ganhou o jogo!')
     imprimir_pilhas(z)
 
-print('Bem vindo(a) ao jogo! \nNesse jogo, você escolhe uma quantidade de números(entre 1 e 7) que vão ser distribuidos entre a mesma quantidade de pilhas \
-que o número escolhido.\nSeu objetivo é fazer com que as pilhas fiquem, cada uma, com os 4 elementos iguais.')
+print('Bem vindo(a) ao jogo StackGame! \nNesse jogo, você escolhe uma quantidade de números(entre 1 e 7) que vão ser distribuidos entre a mesma quantidade de pilhas\
+que o número escolhido.\nSeu objetivo é fazer com que as pilhas fiquem, cada uma, com os 4 elementos iguais. Para empilhar os elementos, é necessário que\
+o elemento do topo da pilha \nque você deseja inserir seja igual ao elemento que você deseja empilhar. Por exemplo, se o elemento do topo for o número 3,\
+sendo uma jogada válida,\no elemento que será empilhado é o 3. Caso sejam diferentes, será uma jogada inválida.')
 
 n = int(input('Quantos números, entre 1 e 7, você deseja deseja distribuir entre as pilhas? ')) # entrada da quantidade de números
 
